@@ -1,0 +1,17 @@
+    public static void main(String[] args){
+        ParkingLot parkingLot = new ParkingLot(2,5);
+        Car c = new Car(8, "WV","Orange",40);
+        Motorcycle m = new Motorcycle(5,"AR","Black",10);
+        Truck t = new Truck(20,"BMW","Gray", 60);
+
+        System.out.println(parkingLot.enter(c,1));
+        System.out.println(parkingLot.getExcpectedRevenue());
+        System.out.println(parkingLot.getBalance());
+
+        System.out.println(parkingLot.enter(m,2));
+        System.out.println(parkingLot.enter(t,3));
+        System.out.println(parkingLot.exit(c));
+        System.out.println(parkingLot.exit(c));
+        System.out.println(parkingLot.getExcpectedRevenue());
+        System.out.println(parkingLot.getBalance());
+        System.out.println(parkingLot.countBikes());
