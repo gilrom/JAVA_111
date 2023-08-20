@@ -1,5 +1,5 @@
 
-public class Car_1 {
+public class Car {
     private int GPK;
     private String manufacturer;
     private String color;
