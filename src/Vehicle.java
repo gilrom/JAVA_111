@@ -4,7 +4,7 @@ public abstract class Vehicle {
     private String color;
     private int volume;
     private int gas;
-    public Car (int gpk, String manufacturer, String color, int volume){
+    public Vehicle (int gpk, String manufacturer, String color, int volume){
         this.GPK = gpk;
         this.manufacturer = manufacturer;
         this. color = color;

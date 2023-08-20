@@ -1,11 +1,12 @@
 
-public class Car extends Vehicle {
-    public Car (int gpk, String manufacturer, String color, int volume){
+public class Truck extends Vehicle {
+
+    public Truck (int gpk, String manufacturer, String color, int volume){
         super(gpk, manufacturer, color, volume);
     }
     @Override
     public void changeTires(){
-        System.out.println("4");
+        System.out.println("8");
     }
 //    public static void main(String[] args){
 //        Car c = new Car(8, "WV","Orange", 40);
