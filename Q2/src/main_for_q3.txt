@@ -1,0 +1,10 @@
+    public static void main(String[] args){
+        SizeableVehicleStorage<Integer, Vehicle> svs = new SizeableVehicleStorage<Integer, Vehicle>(2);
+        Car c = new Car(8, "WV","Orange",40);
+        Motorcycle m = new Motorcycle(5,"AR","Black",10);
+        Truck t = new Truck(20,"BMW","Gray", 60);
+
+        svs.put(1,c);
+        svs.put(4,m);
+        svs.put(42,t);
+    }
