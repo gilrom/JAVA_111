@@ -1,0 +1,54 @@
+abstract class SpaceShip extends Vehicle {
+    SpaceShip(float gpk, String manufacture, String color, float gas_tank){
+        super(gpk,manufacture,color,gas_tank,gas_tank,0);
+    }
+    public String toString(){
+        String s = color +" "+ manufacture;
+        return s;
+    }
+    public boolean liftoff(float distance){
+        return drive(distance);
+    }
+    public void shoot(){
+        System.out.println("Buck!");
+    }
+    public String changeTires(){
+        String s = "No tires!";
+        return s;
+    }
+}
+class CargoShip extends SpaceShip{
+    protected ParkingLot parkingLot;
+    CargoShip(float gpk, String manufacture, String color, float gas_tank,int size, float price){
+        super(gpk, manufacture, color, gas_tank);
+        this.parkingLot = new ParkingLot(size,price);
+    }
+    public String toString(){
+        String s = this.color +" " + this.manufacture + " " + this.parkingLot.svs.size() + "/" + this.parkingLot.svs.max_size;
+        return s;
+    }
+    public boolean enter(Vehicle v, int expectedTime){
+        return this.parkingLot.enter(v,expectedTime);
+    }
+    public boolean exit(Vehicle v){
+        boolean res =  this.parkingLot.exit(v);
+        if(!res){
+            throw new VehicleNotPresentException("Vehicle is not present");
+        }
+        else{
+            return res;
+        }
+    }
+}
+
+class DeathStar extends SpaceShip{
+    DeathStar(float gpk, String manufacture, String color, float gas_tank){
+        super(gpk, manufacture, color, gas_tank);
+    }
+}
+
+class VehicleNotPresentException extends RuntimeException{
+    VehicleNotPresentException(String err){
+        super(err);
+    }
+}
